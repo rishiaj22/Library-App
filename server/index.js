@@ -12,8 +12,8 @@ server.use("/library",libraryRouter)
 server.use("/user",userRouter)
 
 
-server.get("/",()=>{
-    res.status(201).json({message:`Welcome to the Home Page`})
+server.get("/",(req,res)=>{
+    res.send("Welcome to Home Page")
 })
 server.listen(Port,async()=>{
     await connection
