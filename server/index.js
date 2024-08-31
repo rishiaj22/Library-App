@@ -5,9 +5,10 @@ const Port = process.env.Port;
 const connection = require("./Config/connection.db")
 const libraryRouter = require("./Routes/library.route")
 const userRouter = require("./Routes/user.route")
-
+const cors = require("cors");
 
 server.use(express.json())
+server.use(cors({origin:"*"}))
 server.use("/library",libraryRouter)
 server.use("/user",userRouter)
 
