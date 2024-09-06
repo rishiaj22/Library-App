@@ -3,6 +3,7 @@ const libraryRouter = express.Router();
 const LibraryModel = require("../Models/library.model")
 const auth = require("../Middleware/auth.middleware")
 const authorize  = require("../Middleware/authorization.middleware");
+const { sendEmailNotification } = require("../Middleware/mailer");
 
 
 
@@ -10,6 +11,7 @@ const authorize  = require("../Middleware/authorization.middleware");
 libraryRouter.post("/create",auth,authorize(["creator","viewer"]),async (req,res)=>{
     const{title,author,genre, publishedYear,createdAt,description,language} = req.body;
     const createdBy = req.user.id;
+    const userName = req.user.name;
     try {
         const libraryData = new LibraryModel({
             title,
@@ -19,9 +21,11 @@ libraryRouter.post("/create",auth,authorize(["creator","viewer"]),async (req,res
             createdAt,
             description,
             language,
-            createdBy
+            createdBy,
+            userName
         })
         await libraryData.save()
+        await sendEmailNotification(libraryData);
         res.status(201).json({message:"Book is added to the library"})
     } catch (error) {
         res.status(404).json({message:"Error while adding the book to the library",error})

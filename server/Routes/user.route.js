@@ -51,7 +51,7 @@ userRouter.post("/login",async(req,res)=>{
                     return res.status(403).json({ message: "Invalid password" });
                 }
                 const role = user.role;
-                const token =  jwt.sign({id:user._id},process.env.tokenKey)
+                const token =  jwt.sign({id:user._id,username:user.name},process.env.tokenKey)
                 res.status(201).json({message:"User logged in successfully",token,role})
             
             })
