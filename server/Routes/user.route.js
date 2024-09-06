@@ -47,11 +47,13 @@ userRouter.post("/login",async(req,res)=>{
                 if(err){
                     return res.status(505).json({message:"Internal server Error"})
                 }
-                if(result){
-                    const role = user.role;
-                    const token =  jwt.sign({id:user._id},process.env.tokenKey)
-                    res.status(201).json({message:"User logged in successfully",token,role})
+                if (!result) {
+                    return res.status(403).json({ message: "Invalid password" });
                 }
+                const role = user.role;
+                const token =  jwt.sign({id:user._id},process.env.tokenKey)
+                res.status(201).json({message:"User logged in successfully",token,role})
+            
             })
         }
         
