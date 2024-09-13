@@ -1,0 +1,33 @@
+#registerContainer{
+    background-color: snow;
+    border-radius: 36px 36px 120px 120px;
+    border: 20px groove #36889e;
+
+}
+.registerBtn{
+    border: none;
+    border-radius: 9px;
+    padding: 10px 25px 10px 25px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.5s linear;
+}
+.registerBtn:hover{
+    background-color: rgb(3, 161, 161);
+}
+
+.container input{
+    border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    outline: none;
+    border-bottom: 1px solid grey;
+    font-size: 15px;
+    background-color: white;
+    padding: 7px;
+    text-align: center;
+    border-radius: 10px;
+}
+input:focus{
+    box-shadow: none;
+}

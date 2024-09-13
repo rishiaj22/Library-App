@@ -1,0 +1,54 @@
+.booksContainer{
+    background-color: white;
+    padding:  0px 40px 15px 40px;
+    border-radius: 45px;
+    border: 20px outset #36889e;
+    height: 35rem;
+    overflow-y: scroll;
+
+}
+.booksContainer::-webkit-scrollbar {
+    display: none;
+}
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 20px 0;
+    margin: auto; 
+    font-size: 16px; 
+    text-align: left; 
+}
+
+th, td {
+    padding: 12px; 
+    border: 2px solid #ddd; 
+}
+
+th {
+    background-color: #464646; 
+    color: snow;
+    text-align: center;
+    font-weight: bold; 
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+button {
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    padding: 8px 12px; 
+    border-radius: 4px; 
+    font-size: 16px;
+    cursor: pointer; 
+    transition: background-color 0.5s linear; 
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+#deleteBtn{
+    background-color: rgb(200, 56, 56);
+}

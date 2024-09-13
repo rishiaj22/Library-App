@@ -1,0 +1,15 @@
+#createContainer{
+    background-color: snow;
+    border-radius: 36px 36px 120px 120px;
+    border: 20px groove #36889e;
+}
+
+input{
+    margin-top: 10px;
+}
+textarea{
+    margin-top: 10px;
+}
+#createBtn{
+    margin-top: 20px;
+}
